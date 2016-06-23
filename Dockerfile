@@ -14,7 +14,7 @@ RUN buildDeps=" \
 	&& docker-php-ext-enable pthreads weakref yaml \
 	&& echo "phar.readonly = off" > /usr/local/etc/php/conf.d/phar.ini \
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps
-        && apt-get install sudo
+        && apt-get install sudo vim
         
 RUN mkdir -p /srv/genisys && chown genisys:genisys /srv/genisys
 
