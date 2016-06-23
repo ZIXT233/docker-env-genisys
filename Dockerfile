@@ -13,8 +13,7 @@ RUN buildDeps=" \
 	&& pecl install channel://pecl.php.net/pthreads-3.1.6 channel://pecl.php.net/weakref-0.3.2 channel://pecl.php.net/yaml-2.0.0RC7 \
 	&& docker-php-ext-enable pthreads weakref yaml \
 	&& echo "phar.readonly = off" > /usr/local/etc/php/conf.d/phar.ini \
-	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
-        && apt-get install sudo vim
+	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps
         
 RUN mkdir -p /srv/genisys && chown genisys:genisys /srv/genisys
 
